@@ -1,0 +1,12 @@
+:root{
+  --primary-color: #0077cc;
+}
+div{
+  background-color: var(--primary-color);
+  display: flex;
+  transition: all 0.3s;
+}
+div:first-child{
+  box-shadow: 0 0 10px var(--primary-color);
+  user-select: none;
+}
