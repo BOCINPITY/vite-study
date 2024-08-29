@@ -1,2 +1,2 @@
-import "./App.vue"
-console.log("tttets///")
+import "@/test.js"
+console.log("main.js")
