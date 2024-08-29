@@ -1,13 +1,28 @@
-@base-width:100px;
-@base-height:100px;
+@base-width: 300px;
+@base-height: 100px;
+
+.common-styles(){
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,.8);
+}
+
 .container {
   width: @base-width;
   height: @base-height;
   background-color: @primaryColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .common-styles();
 
   .box {
-    width: @base-width/2;
     height: @base-height/2;
     background-color: @warningColor;
+    filter: blur(1px);
+    width: clamp(100px, 30%, 200px);
+    text-align: center;
+    line-height: @base-height/2;
+    user-select: none;
+    .common-styles();
   }
 }

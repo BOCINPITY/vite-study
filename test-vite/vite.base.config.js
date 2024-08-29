@@ -1,5 +1,6 @@
 // 基础配置
 import {defineConfig} from 'vite'
+const postcssPresetEnv = require('postcss-preset-env')
 
 export default defineConfig({
     optimizeDeps: {
@@ -33,6 +34,10 @@ export default defineConfig({
                 }, // 全局变量
             }
         },
-        devSourcemap: true //开启css的sourceMap(文件索引)
+        devSourcemap: true, //开启css的sourceMap(文件索引)
+        postcss: {
+            plugins:[postcssPresetEnv(), //postcss的预设插件
+            ]
+        }
     }
 })
