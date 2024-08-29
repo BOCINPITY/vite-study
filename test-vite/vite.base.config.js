@@ -5,6 +5,17 @@ const postcssPresetEnv = require('postcss-preset-env')
 const path = require('path')
 
 export default defineConfig({
+    build:{
+        rollupOptions:{
+            output:{
+                assetFileNames: "static/[hash].[name].[ext]", // 配置输出的静态资源文件的路径和名字
+
+            }
+        },
+        assetsInlineLimit: 1024 * 10, // 配置小于10kb的文件会被转换成base64
+        outDir: "dist", // 配置输出的文件夹,默认是dist
+        assetsDir: "static", // 配置输出的静态资源文件夹,默认是assets
+    },
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "./src"),

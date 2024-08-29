@@ -12,7 +12,7 @@
 
 //vite静态资源文件处理
 
-// import "./src/imageLoader"
+import "./src/imageLoader"
 import "./src/svgLoader"
 import {name} from './src/json/index.json'
 

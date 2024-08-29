@@ -1,10 +1,11 @@
-import svg from "./assets/svg/vue.svg?raw";
+import svg from "./assets/svg/vue.svg";
+import svgRaw from "./assets/svg/vue.svg?raw";
 
-console.log(svg);
+console.log(svgRaw, svg);
 const div = document.createElement("div")
-div.innerHTML = svg;
+div.innerHTML = svgRaw;
 document.body.appendChild(div);
-
+// document.body.innerHTML = svgRaw;
 document.querySelector("svg").addEventListener("click", function (){
     const childList = this.childNodes;
     childList.forEach((item) => {
