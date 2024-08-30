@@ -17,3 +17,4 @@ import "./src/svgLoader"
 import {name} from './src/json/index.json'
 
 console.log(name)
+console.log(import.meta.env)

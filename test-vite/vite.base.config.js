@@ -1,27 +1,29 @@
 // 基础配置
 import {defineConfig} from 'vite'
-
-const postcssPresetEnv = require('postcss-preset-env')
-const path = require('path')
+import {ViteAliases} from "vite-aliases";
+import postcssPresetEnv from "postcss-preset-env";
+import myViteAliases from "./plugins/myViteAliases";
+// const path = require('path')
+import path from 'path'
 
 export default defineConfig({
-    build:{
-        rollupOptions:{
-            output:{
+    build: {
+        rollupOptions: {
+            output: {
                 assetFileNames: "static/[hash].[name].[ext]", // 配置输出的静态资源文件的路径和名字
-
             }
         },
         assetsInlineLimit: 1024 * 10, // 配置小于10kb的文件会被转换成base64
         outDir: "dist", // 配置输出的文件夹,默认是dist
         assetsDir: "static", // 配置输出的静态资源文件夹,默认是assets
+        emptyOutDir: true, // 配置是否清空输出目录 默认是true，开启后每次构建之前都会清空输出目录
     },
-    resolve: {
-        alias: {
-            "@": path.resolve(__dirname, "./src"),
-            "@assets": path.resolve(__dirname, "./src/assets"), //路径别名配置
-        }
-    },
+    // resolve: {
+    //     alias: {
+    //         "@": path.resolve(__dirname, "./src"),
+    //         "@assets": path.resolve(__dirname, "./src/assets"), //路径别名配置
+    //     }
+    // },
     optimizeDeps: {
         exclude: [],
     },
@@ -58,5 +60,9 @@ export default defineConfig({
             plugins: [postcssPresetEnv(), //postcss的预设插件
             ]
         }
-    }
+    },
+    plugins: [
+        // ViteAliases(), //
+        myViteAliases()
+    ],
 })
