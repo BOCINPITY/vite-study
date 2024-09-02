@@ -18,3 +18,11 @@ import {name} from './src/json/index.json'
 
 console.log(name)
 console.log(import.meta.env)
+
+fetch("api/users",{
+    method:'post',
+}).then((res) => {
+    console.log(res.body)
+}).catch((err) => {
+    console.log(err)
+})

@@ -2,6 +2,7 @@
 import {defineConfig} from 'vite'
 import {ViteAliases} from "vite-aliases";
 import postcssPresetEnv from "postcss-preset-env";
+import MyMockPlugin from "./plugins/myMockPlugin";
 import myViteAliases from "./plugins/myViteAliases";
 // const path = require('path')
 import path from 'path'
@@ -62,7 +63,8 @@ export default defineConfig({
         }
     },
     plugins: [
-        // ViteAliases(), //
-        myViteAliases()
+        ViteAliases(), //
+        // myViteAliases()
+        MyMockPlugin({}),
     ],
 })
