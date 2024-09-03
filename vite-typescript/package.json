@@ -9,8 +9,13 @@
     "preview": "vite build && vite preview"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.7",
+    "@types/node": "^22.5.2",
     "typescript": "^5.5.4",
     "vite": "^5.4.2",
     "vite-plugin-checker": "^0.7.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
